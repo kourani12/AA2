@@ -15,19 +15,22 @@ console.log(maxWithReduce([-2, -3, -7, 3])); // 3
 */
 
 let maxWithReduce = function(nums) {
-    // Your code here 
+  //   return nums.reduce((max, currentValue) => {
+  //     if (currentValue > max) {
+  //       return currentValue;
+  //     } else {
+  //       return max;
+  //     }
+  //   }, -Infinity);
+  // };
 
 
-    return nums.reduce( (accumulator, currentValue) =>{
-
-      return accumulator > currentValue ? currentValue : accumulator
-
-
-      // if(accumulator > currentValue){
-      //   return currentValue;
-      // } else {
-      //   return accumulator;
-      // }
+    return nums.reduce((accumulator, currentValue) => {
+      if(accumulator > currentValue) {
+        return currentValue;
+      } else {
+        return accumulator;
+      }
 
     }, -Infinity);
 };
