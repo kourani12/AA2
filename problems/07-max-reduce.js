@@ -26,7 +26,7 @@ let maxWithReduce = function(nums) {
 
 
     return nums.reduce((accumulator, currentValue) => {
-      if(accumulator > currentValue) {
+      if(accumulator < currentValue) {
         return currentValue;
       } else {
         return accumulator;
