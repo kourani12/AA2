@@ -15,11 +15,26 @@ console.log(longestWord('')); // ''
 
 */
 
-let longestWord = function(sentence) {
-    // Your code here 
-};
-
-// Your code here 
+let hasThreeVowels = function (string) {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    let foundVowels = [];
+    let uniqueCount = 0;
+  
+    // Iterate through each character in the string
+    string.split('').forEach((char) => {
+      // Check if character is a vowel and not already found
+      if (
+        vowels.includes(char.toLowerCase()) &&
+        !foundVowels.includes(char.toLowerCase())
+      ) {
+        foundVowels.push(char.toLowerCase());
+        uniqueCount++;
+      }
+    });
+  
+    // Check if we found at least 3 different vowels
+    return uniqueCount >= 3;
+  };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
