@@ -15,26 +15,32 @@ console.log(longestWord('')); // ''
 
 */
 
-let hasThreeVowels = function (string) {
-    const vowels = ['a', 'e', 'i', 'o', 'u'];
-    let foundVowels = [];
-    let uniqueCount = 0;
-  
-    // Iterate through each character in the string
-    string.split('').forEach((char) => {
-      // Check if character is a vowel and not already found
-      if (
-        vowels.includes(char.toLowerCase()) &&
-        !foundVowels.includes(char.toLowerCase())
-      ) {
-        foundVowels.push(char.toLowerCase());
-        uniqueCount++;
-      }
+let longestWord = function(sentence) {
+    // Split sentence into words
+    let words = sentence.split(' ');
+    
+    // Variables to keep track of the longest word and its length
+    let longestWord = '';
+    let maxLength = 0;
+    
+    // Iterate through each word using forEach
+    words.forEach(function(word) {
+        // Check if current word is longer than the current longest word
+        if (word.length > maxLength) {
+            maxLength = word.length;
+            longestWord = word;
+        }
     });
-  
-    // Check if we found at least 3 different vowels
-    return uniqueCount >= 3;
-  };
+    
+    // Return the longest word found
+    return longestWord;
+};
+
+// Examples
+console.log(longestWord('where did everyone go')); // 'everyone'
+console.log(longestWord('prefer simplicity over complexity')); // 'simplicity'
+console.log(longestWord('')); // ''
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

@@ -12,8 +12,17 @@ console.log(removeEWords('Enter the building')); // 'building'
 
 */
 
-let removeEWords = function(sentence) {
-    // Your code here 
+let removeEWords = function (sentence) {
+  // Split the sentence into an array of words
+  let words = sentence.split(' ');
+
+  // Filter out words that contain the letter 'e'
+  let filteredWords = words.filter((word) => !word.includes('e'));
+
+  // Join the filtered words back into a sentence
+  let result = filteredWords.join(' ');
+
+  return result;
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
