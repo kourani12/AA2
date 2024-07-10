@@ -16,8 +16,11 @@ console.log(productWithReduce([4, 3])); // 12
 */
 
 let productWithReduce = function(nums) {
-    // Your code here 
-}
+  let start = 1;
+  return nums.reduce( (accumalator, currentValue) => 
+    accumalator * currentValue, 1);
+};
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
